@@ -1,0 +1,48 @@
+* {
+    font-family:"Alumni Sans Pinstripe", sans-serif;
+    font-weight: bold;
+}
+
+.background {
+    background-color: #222222;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.ul {
+    list-style: none;
+    text-decoration: none;
+}
+
+.sidebar-btn {
+  color: #638e7c;
+  transition: color 0.3s ease-in-out;
+}
+
+.sidebar-btn:hover {
+  color: white;
+}
+
+.navbar-logo-container {
+  position: relative;
+  display: inline-block;
+  width: 75px;
+  height: 35px;
+}
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.4s ease-in-out;
+}
+.logo-white {
+  opacity: 0;
+}
+.navbar-logo-container:hover .logo-white {
+  opacity: 1;
+}
+.navbar-logo-container:hover .logo-green {
+  opacity: 0;
+}
