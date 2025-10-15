@@ -1,10 +1,42 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App.tsx";
 import "bootstrap/dist/css/bootstrap.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./App.css";
+
+import HomePage from "./pages/HomePage.tsx";
+import MoviesPage from "./pages/MoviesPage.tsx";
+import TvSeriesPage from "./pages/TvSeriesPage.tsx";
+import ActorsPage from "./pages/ActorsPage.tsx";
+import GenresPage from "./pages/GenresPage.tsx";
+import NotFoundPage from "./pages/NotFoundPage.tsx";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomePage />,
+    errorElement: <NotFoundPage />,
+  },
+  {
+    path: "/movies",
+    element: <MoviesPage />,
+  },
+  {
+    path: "/tv-series",
+    element: <TvSeriesPage />,
+  },
+  {
+    path: "/actors",
+    element: <ActorsPage />,
+  },
+  {
+    path: "/genres",
+    element: <GenresPage />,
+  },
+]);
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </StrictMode>
 );
