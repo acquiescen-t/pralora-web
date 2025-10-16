@@ -12,6 +12,7 @@
 /* Sidebar size, colour & transition */
 .sidebar, .sidebar .list-group-item {
   font-family:"Bebas Neue", sans-serif !important;
+  font-weight:500;
 }
 .sidebar {
   width: 10vw !important;
