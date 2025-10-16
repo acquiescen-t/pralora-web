@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 
+import Layout from "./Layout.tsx";
 import HomePage from "./pages/HomePage.tsx";
 import MoviesPage from "./pages/MoviesPage.tsx";
 import TvSeriesPage from "./pages/TvSeriesPage.tsx";
@@ -14,24 +15,16 @@ import NotFoundPage from "./pages/NotFoundPage.tsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />,
+    element: <Layout />,
     errorElement: <NotFoundPage />,
-  },
-  {
-    path: "/movies",
-    element: <MoviesPage />,
-  },
-  {
-    path: "/tv-series",
-    element: <TvSeriesPage />,
-  },
-  {
-    path: "/actors",
-    element: <ActorsPage />,
-  },
-  {
-    path: "/genres",
-    element: <GenresPage />,
+    children: [
+      { index: true, element: <HomePage /> },
+      { path: "home", element: <HomePage /> },
+      { path: "movies", element: <MoviesPage /> },
+      { path: "tv-series", element: <TvSeriesPage /> },
+      { path: "actors", element: <ActorsPage /> },
+      { path: "genres", element: <GenresPage /> },
+    ],
   },
 ]);
 
