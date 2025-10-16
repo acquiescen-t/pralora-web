@@ -1,28 +1,40 @@
+/* Global */
 * {
     font-family:"Alumni Sans Pinstripe", sans-serif;
     font-weight: bold;
 }
-
 .background {
     background-color: #222222;
     background-size: cover;
     min-height: 100vh;
 }
 
-.ul {
-    list-style: none;
-    text-decoration: none;
+/* Sidebar size, colour & transition */
+.sidebar, .sidebar .list-group-item {
+  font-family:"Bebas Neue", sans-serif !important;
 }
-
+.sidebar {
+  width: 10vw !important;
+  background-color: #638e7c;
+}
 .sidebar-btn {
   color: #638e7c;
   transition: color 0.3s ease-in-out;
 }
-
 .sidebar-btn:hover {
   color: white;
 }
+.list-group-item {
+  background-color: #638e7c;
+  border: none;
+}
+.list-group-item.active {
+  background-color: #456357;
+  color: white;
+}
 
+
+/* Navbar logo size, colour & transition*/
 .navbar-logo-container {
   position: relative;
   display: inline-block;
@@ -46,3 +58,10 @@
 .navbar-logo-container:hover .logo-green {
   opacity: 0;
 }
+
+/* Search bar's width */
+.search-bar {
+  padding: 0px 15vw;
+}
+
+
