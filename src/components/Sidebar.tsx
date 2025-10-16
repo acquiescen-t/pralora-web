@@ -1,10 +1,24 @@
 import { ListIcon } from "@phosphor-icons/react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import {
+  HouseIcon,
+  FilmReelIcon,
+  TelevisionIcon,
+  UserIcon,
+  MaskHappyIcon,
+} from "@phosphor-icons/react";
 
 const Sidebar = () => {
-  const pages = ["movies", "tv series", "actors", "genres"];
-  const [hover, setHover] = useState(false);
+  const pages = ["home", "movies", "tv series", "actors", "genres"];
+  const iconMap: Record<string, React.ElementType> = {
+    home: HouseIcon,
+    movies: FilmReelIcon,
+    "tv series": TelevisionIcon,
+    actors: UserIcon,
+    genres: MaskHappyIcon,
+  };
+  const [selectedIndex, setSelectedIndex] = useState(-1);
 
   function toTitleCase(str: any) {
     return str
@@ -19,8 +33,8 @@ const Sidebar = () => {
   return (
     <>
       <ListIcon
-        className="sidebar-btn p-0"
-        size={30}
+        className="sidebar-btn"
+        size={24}
         type="button"
         data-bs-toggle="offcanvas"
         data-bs-target="#sidebar"
@@ -28,32 +42,32 @@ const Sidebar = () => {
       ></ListIcon>
 
       <div
-        className="offcanvas offcanvas-start"
+        className="offcanvas offcanvas-start sidebar"
         tabIndex={-1}
         id="sidebar"
         aria-labelledby="sidebarLabel"
       >
-        <div className="offcanvas-header">
-          <button
-            type="button"
-            className="btn-close"
-            data-bs-dismiss="offcanvas"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div className="offcanvas-body">
-          <ul style={{ listStyle: "none" }}>
-            {pages.map((page) => (
-              <li key={page}>
+        <div className="offcanvas-body p-0">
+          <div className="list-group list-group-flush">
+            {pages.map((page, index) => {
+              const Icon = iconMap[page];
+              return (
                 <Link
+                  key={page}
                   to={"/" + page.replaceAll(" ", "-")}
+                  className={
+                    "list-group-item list-group-item-action" +
+                    (selectedIndex === index ? " active" : "")
+                  }
+                  onClick={() => setSelectedIndex(index)}
                   style={{ textDecoration: "none" }}
                 >
+                  <Icon size={24} weight="bold" className="me-3" />
                   {toTitleCase(page)}
                 </Link>
-              </li>
-            ))}
-          </ul>
+              );
+            })}
+          </div>
         </div>
       </div>
     </>
