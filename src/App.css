@@ -25,7 +25,7 @@
 .sidebar-btn:hover {
   color: white;
 }
-.list-group-item {
+.sidebar .list-group-item {
   background-color: #638e7c;
   border: none;
 }
@@ -36,6 +36,9 @@
 
 
 /* Navbar logo size, colour & transition*/
+.navbar {
+  background: #222222;
+}
 .navbar-logo-container {
   position: relative;
   display: inline-block;
@@ -65,4 +68,39 @@
   padding: 0px 15vw;
 }
 
+/* Cards */
+.card {
+  background-color: transparent;
+  overflow: hidden;
+}
+.card-img-top {
+  transition: transform 0.15s ease-in-out;
+}
+.card .list-group-item {
+  background-color: #456357;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease-in-out;
+}
 
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+.card:hover .list-group-item {
+  background-color: #638e7c;
+}
+.card a {
+  text-decoration: none;
+}
+.card-header {
+  color: white;
+  text-decoration: none;
+  font-size: 2em;
+  transition: color 0.3s ease-in-out;
+}
+.card-header:hover {
+  color: #456357;
+}
+.col {
+  display: block;
+}
