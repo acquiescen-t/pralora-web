@@ -19,7 +19,7 @@ const Navbar = ({ initialQuery = "" }: Props) => {
   };
 
   return (
-    <nav className="navbar fixed-top pt-4">
+    <nav className="navbar fixed-top pt-2">
       <div className="d-flex align-items-center w-100">
         <div className="d-flex align-items-center ps-4" style={{ flex: 1 }}>
           <Sidebar />
