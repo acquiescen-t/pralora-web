@@ -6,28 +6,21 @@ import type { TvSeries } from "../models/TvSeries";
 
 interface Props {
   media: Movie | TvSeries;
+  onSelectMedia: (media: Movie | TvSeries) => void;
 }
 
-const MediaCard = ({ media }: Props) => {
-  // const getMediaTitle = (media: Movie | TvSeries) =>
-  //   "title" in media ? media.title : media.name;
-  const getMediaLink = (media: Movie | TvSeries) =>
-    "title" in media ? "/movies/id/" : "/tv-series/id/";
+const MediaCard = ({ media, onSelectMedia }: Props) => {
   return (
     <div className="card overflow-hidden">
-      <Link to={getMediaLink(media).concat(String(media.id))}>
-        <img
-          src={Config.externalApiMediaUrl + media.poster_path}
-          className="card-img-top"
-          onError={({ currentTarget }) => {
-            currentTarget.onerror = null;
-            currentTarget.src = ImageNotFound;
-          }}
-        />
-        {/* <ul className="list-group list-group-flush">
-          <li className="list-group-item p-3">{getMediaTitle(media)}</li>
-        </ul> */}
-      </Link>
+      <img
+        src={Config.tmdbPortraitMedia + media.poster_path}
+        className="card-img-top"
+        onError={({ currentTarget }) => {
+          currentTarget.onerror = null;
+          currentTarget.src = ImageNotFound;
+        }}
+        onClick={() => onSelectMedia(media)}
+      />
     </div>
   );
 };
