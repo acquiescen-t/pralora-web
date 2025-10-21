@@ -9,8 +9,8 @@ interface Props {
 }
 
 const MediaCard = ({ media }: Props) => {
-  const getMediaTitle = (media: Movie | TvSeries) =>
-    "title" in media ? media.title : media.name;
+  // const getMediaTitle = (media: Movie | TvSeries) =>
+  //   "title" in media ? media.title : media.name;
   const getMediaLink = (media: Movie | TvSeries) =>
     "title" in media ? "/movies/id/" : "/tv-series/id/";
   return (
@@ -24,9 +24,9 @@ const MediaCard = ({ media }: Props) => {
             currentTarget.src = ImageNotFound;
           }}
         />
-        <ul className="list-group list-group-flush">
+        {/* <ul className="list-group list-group-flush">
           <li className="list-group-item p-3">{getMediaTitle(media)}</li>
-        </ul>
+        </ul> */}
       </Link>
     </div>
   );
