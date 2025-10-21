@@ -23,6 +23,14 @@ export default function HomePage() {
       .catch((error) => console.error(error));
   }, []);
 
+  const handleSelectMedia = (media: Movie | TvSeries) => {
+    let mediaTitle = "title" in media ? media.title : media.name;
+    console.log("Clicked on " + mediaTitle);
+  };
+
+  const getMediaLink = (media: Movie | TvSeries) =>
+    "title" in media ? "/movies/id/" : "/tv-series/id/";
+
   return (
     <div className="ps-3">
       <div className="browse-movies pt-3">
@@ -32,7 +40,9 @@ export default function HomePage() {
         <div className="row">
           {movies.map((movie) => (
             <div key={movie.id} className="col-2 pt-3">
-              <MediaCard media={movie} />
+              <Link to={getMediaLink(movie).concat(String(movie.id))}>
+                <MediaCard media={movie} onSelectMedia={handleSelectMedia} />
+              </Link>
             </div>
           ))}
         </div>
@@ -44,7 +54,7 @@ export default function HomePage() {
         <div className="row">
           {tvSeries.map((tv) => (
             <div key={tv.id} className="col-2 pt-3">
-              <MediaCard media={tv} />
+              <MediaCard media={tv} onSelectMedia={handleSelectMedia} />
             </div>
           ))}
         </div>
