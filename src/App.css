@@ -36,9 +36,6 @@
 
 
 /* Navbar logo size, colour & transition*/
-.navbar {
-  background: #222222;
-}
 .navbar-logo-container {
   position: relative;
   display: inline-block;
@@ -103,4 +100,18 @@
 }
 .col {
   display: block;
+}
+
+/* PreviewMedia */
+.preview-title {
+  font-family: "Bebas Neue";
+  font-weight: 500;
+  color: white;
+  padding: 2%;
+}
+.image-fade {
+  display: block;
+  width: 100%;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
 }
