@@ -19,9 +19,9 @@ const Navbar = ({ initialQuery = "" }: Props) => {
   };
 
   return (
-    <nav className="navbar fixed-top">
+    <nav className="navbar fixed-top pt-4">
       <div className="d-flex align-items-center w-100">
-        <div className="d-flex align-items-center ps-3" style={{ flex: 1 }}>
+        <div className="d-flex align-items-center ps-4" style={{ flex: 1 }}>
           <Sidebar />
           <Link className="navbar-brand navbar-logo-container ms-1" to="/home">
             <img src={logoGreen} className="logo logo-green" />
@@ -53,10 +53,10 @@ const Navbar = ({ initialQuery = "" }: Props) => {
         </div>
 
         <div
-          className="d-flex justify-content-end align-items-center text-white pe-3"
+          className="d-flex justify-content-end align-items-center text-white pe-3 align-bottom"
           style={{ flex: 1 }}
         >
-          <p> Account and notifications go here</p>
+          Account and notifications go here
         </div>
       </div>
     </nav>
