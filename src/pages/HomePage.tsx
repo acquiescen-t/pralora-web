@@ -33,9 +33,9 @@ export default function HomePage() {
 
   return (
     <div className="ps-3">
-      <div className="browse-movies pt-3">
+      <div className="browse-movies pt-5">
         <Link to="/movies" className="card-header">
-          Browse All Movies
+          Browse Movies
         </Link>
         <div className="row">
           {movies.map((movie) => (
@@ -49,7 +49,7 @@ export default function HomePage() {
       </div>
       <div className="browse-tv-series pt-3">
         <Link to="/tv-series" className="card-header">
-          Browse All TV Series
+          Browse TV Series
         </Link>
         <div className="row">
           {tvSeries.map((tv) => (
