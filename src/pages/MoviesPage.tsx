@@ -3,7 +3,6 @@ import { Endpoints } from "../api/Endpoints";
 import api from "../api/InternalApi";
 import type { Movie } from "../models/Movie";
 import MediaCard from "../components/MediaCard";
-import Config from "../api/Config";
 import type { TvSeries } from "../models/TvSeries";
 import PreviewMedia from "../components/PreviewMedia";
 
@@ -26,19 +25,17 @@ export default function MoviesPage() {
   };
 
   return (
-    <div className="pt-4 ps-3">
+    <div className="pt-2 ps-3">
       <PreviewMedia media={selectedMovie!}></PreviewMedia>
-      <div className="container-fluid px-0">
-        <div className="row g-2">
-          {movies.map((movie) => (
-            <div className="col-2">
-              <MediaCard
-                media={movie}
-                onSelectMedia={handleSelectMedia}
-              ></MediaCard>
-            </div>
-          ))}
-        </div>
+      <div className="d-flex overflow-auto movies-scroll">
+        {movies.map((movie) => (
+          <div key={movie.id} className="media-card-col">
+            <MediaCard
+              media={movie}
+              onSelectMedia={handleSelectMedia}
+            ></MediaCard>
+          </div>
+        ))}
       </div>
     </div>
   );

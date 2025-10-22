@@ -73,12 +73,12 @@
 /* Cards */
 .card {
   background-color: transparent;
+  border: none;
   overflow: hidden;
 }
 .card-img-top {
   transition: transform 0.15s ease-in-out;
 }
-
 .card:hover .card-img-top {
   transform: scale(1.05);
 }
@@ -105,6 +105,17 @@
 .image-fade {
   display: block;
   width: 100%;
-  mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+.media-card-col {
+  flex: 0 0 13%;
+  max-width: 13%;
+}
+.movies-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 0.5rem;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.movies-scroll::-webkit-scrollbar {
+  display: none;
 }
