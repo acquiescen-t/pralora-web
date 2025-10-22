@@ -73,26 +73,14 @@
 .card-img-top {
   transition: transform 0.15s ease-in-out;
 }
-.card .list-group-item {
-  background-color: #456357;
-  color: white;
-  border: none;
-  transition: background-color 0.3s ease-in-out;
-}
 
 .card:hover .card-img-top {
   transform: scale(1.05);
 }
-.card:hover .list-group-item {
-  background-color: #638e7c;
-}
-.card a {
-  text-decoration: none;
-}
 .card-header {
   color: white;
   text-decoration: none;
-  font-size: 2em;
+  font-size: 1.5em;
   transition: color 0.3s ease-in-out;
 }
 .card-header:hover {
