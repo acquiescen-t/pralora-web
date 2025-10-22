@@ -61,10 +61,15 @@ const PreviewMedia = ({ media }: Props) => {
             <div className="preview-genres pt-2">
               <div className="row">
                 <div className="col d-flex">
-                  <button type="button" className="btn btn-danger pt-1">
-                    <PlayCircleIcon size={20} className="me-2" />
-                    <span className="bebas">Watch</span>
-                  </button>
+                  <Link to={"/movies/id/" + media.id}>
+                    <button
+                      type="button"
+                      className="btn btn-sm btn-danger pt-1"
+                    >
+                      <PlayCircleIcon size={20} className="me-2" />
+                      <span className="bebas">Watch</span>
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
