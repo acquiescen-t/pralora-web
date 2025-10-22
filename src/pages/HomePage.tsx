@@ -39,7 +39,7 @@ export default function HomePage() {
         </Link>
         <div className="row">
           {movies.map((movie) => (
-            <div key={movie.id} className="col-2 pt-3">
+            <div key={movie.id} className="col-2 py-2">
               <Link to={getMediaLink(movie).concat(String(movie.id))}>
                 <MediaCard media={movie} onSelectMedia={handleSelectMedia} />
               </Link>
@@ -53,7 +53,7 @@ export default function HomePage() {
         </Link>
         <div className="row">
           {tvSeries.map((tv) => (
-            <div key={tv.id} className="col-2 pt-3">
+            <div key={tv.id} className="col-2 py-2">
               <MediaCard media={tv} onSelectMedia={handleSelectMedia} />
             </div>
           ))}
