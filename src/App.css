@@ -11,6 +11,10 @@
 .outlet {
   padding: 1% 1% 0% 1%;
 }
+.col {
+  display: block;
+}
+
 /* Sidebar size, colour & transition */
 .sidebar, .sidebar .list-group-item {
   font-family:"Bebas Neue", sans-serif !important;
