@@ -130,6 +130,7 @@
   max-width: 32%;
 }
 .movies-scroll {
+  max-height: 90vh;
   display: flex;
   overflow-x: auto;
   gap: 0.5rem;
