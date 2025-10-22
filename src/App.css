@@ -40,7 +40,6 @@
   color: white;
 }
 
-
 /* Navbar logo size, colour & transition*/
 .navbar {
   background: #222222;
@@ -110,7 +109,7 @@
   color: white;
 }
 .preview-overview {
-  font-size: 1.1em;
+  font-size: 0.95em;
   font-weight: 300;
 }
 .preview-genres span {
@@ -125,15 +124,10 @@
 .badge-green:hover {
   background-color: #638e7c;
 }
-.media-card-col {
-  flex: 0 0 32%;
-  max-width: 32%;
-}
 .movies-scroll {
   max-height: 90vh;
   display: flex;
   overflow-x: auto;
-  gap: 0.5rem;
   scroll-behavior: smooth;
   scrollbar-width: none;
 }
