@@ -38,8 +38,8 @@ const PreviewMedia = ({ media }: Props) => {
                 <div className="preview-title py-2">{getMediaTitle(media)}</div>
                 <div className="preview-genres">
                   {media.genre.map((id) => (
-                    <Link to={"/genres/" + id}>
-                      <span key={id} className="badge badge-green me-2">
+                    <Link key={id} to={"/genres/" + id}>
+                      <span className="badge badge-green me-2">
                         {GENRES[id]}
                       </span>
                     </Link>
