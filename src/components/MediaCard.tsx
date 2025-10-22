@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import type { Movie } from "../models/Movie";
 import Config from "../api/Config";
 import ImageNotFound from "../assets/poster-not-found.jpg";
@@ -11,7 +10,7 @@ interface Props {
 
 const MediaCard = ({ media, onSelectMedia }: Props) => {
   return (
-    <div className="card overflow-hidden">
+    <div className="card border-0 overflow-hidden">
       <img
         src={Config.tmdbPortraitMedia + media.poster_path}
         className="card-img-top"
