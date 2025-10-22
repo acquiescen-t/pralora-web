@@ -25,17 +25,23 @@ export default function MoviesPage() {
   };
 
   return (
-    <div className="pt-2 ps-3">
-      <PreviewMedia media={selectedMovie!}></PreviewMedia>
-      <div className="d-flex overflow-auto movies-scroll">
-        {movies.map((movie) => (
-          <div key={movie.id} className="media-card-col">
-            <MediaCard
-              media={movie}
-              onSelectMedia={handleSelectMedia}
-            ></MediaCard>
+    <div className="pt-3 ps-3">
+      <div className="row">
+        <div className="col-6">
+          <div className="d-flex overflow-auto movies-scroll">
+            {movies.map((movie) => (
+              <div key={movie.id} className="media-card-col">
+                <MediaCard
+                  media={movie}
+                  onSelectMedia={handleSelectMedia}
+                ></MediaCard>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
+        <div className="col-6">
+          <PreviewMedia media={selectedMovie!}></PreviewMedia>
+        </div>
       </div>
     </div>
   );

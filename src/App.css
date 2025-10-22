@@ -74,7 +74,6 @@
 .card {
   background-color: transparent;
   border: none;
-  overflow: hidden;
 }
 .card-img-top {
   transition: transform 0.15s ease-in-out;
@@ -91,23 +90,40 @@
 .card-header:hover {
   color: #456357;
 }
-.col {
-  display: block;
-}
 
-/* PreviewMedia */
+/* MoviesPage */
+.backdrop img {
+  width: 100%;
+  object-fit: fill;
+}
+.preview-title, .preview-overview, .preview-release-year, .preview-genres {
+  padding: 0%;
+}
 .preview-title {
   font-family: "Bebas Neue";
   font-weight: 500;
+  font-size: 1.25em;
   color: white;
-  padding: 2%;
 }
-.image-fade {
-  display: block;
-  width: 100%;
+.preview-overview {
+  font-size: 1.1em;
+  font-weight: 300;
+}
+.preview-genres span {
+  font-size: 0.85em;
+  font-family: "Bebas Neue";
+}
+.badge-green {
+  background-color: #456357;
+  color: white;
+  transition: background-color 0.2s ease-in-out;
+}
+.badge-green:hover {
+  background-color: #638e7c;
+}
 .media-card-col {
-  flex: 0 0 13%;
-  max-width: 13%;
+  flex: 0 0 32%;
+  max-width: 32%;
 }
 .movies-scroll {
   display: flex;
