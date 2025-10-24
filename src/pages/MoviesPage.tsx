@@ -3,10 +3,10 @@ import { Endpoints } from "../api/Endpoints";
 import api from "../api/InternalApi";
 import type { Movie } from "../models/Movie";
 import MediaCard from "../components/MediaCard";
-import type { TvSeries } from "../models/TvSeries";
 import PreviewMedia from "../components/PreviewMedia";
+import type { TvSeries } from "../models/TvSeries";
 
-export default function MediaPage() {
+export default function MoviesPage() {
   const [movies, setMovies] = useState<Movie[]>([]);
   useEffect(() => {
     api
@@ -14,14 +14,14 @@ export default function MediaPage() {
       .then((response) => setMovies(response.data))
       .catch((error) => console.error(error));
   }, []);
-
-  const [selectedMovie, setSelectedMovie] = useState<Movie>();
   useEffect(() => {
-    setSelectedMovie(movies[0]);
+    setSelectedMedia(movies[0]);
   }, [movies]);
 
+  const [selectedMedia, setSelectedMedia] = useState<Movie | TvSeries>();
+
   const handleSelectMedia = (media: Movie | TvSeries) => {
-    "title" in media && setSelectedMovie(media);
+    setSelectedMedia(media);
   };
 
   return (
@@ -42,7 +42,7 @@ export default function MediaPage() {
           </div>
         </div>
         <div className="col-6">
-          <PreviewMedia media={selectedMovie!}></PreviewMedia>
+          {selectedMedia && <PreviewMedia media={selectedMedia}></PreviewMedia>}
         </div>
       </div>
     </div>
