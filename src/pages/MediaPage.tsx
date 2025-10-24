@@ -6,7 +6,7 @@ import MediaCard from "../components/MediaCard";
 import type { TvSeries } from "../models/TvSeries";
 import PreviewMedia from "../components/PreviewMedia";
 
-export default function MoviesPage() {
+export default function MediaPage() {
   const [movies, setMovies] = useState<Movie[]>([]);
   useEffect(() => {
     api

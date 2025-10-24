@@ -140,3 +140,9 @@
   border-radius: 0.5rem;
   position: relative;
 }
+
+/* WatchPage */
+.media-info-title {
+  font-family: "Bebas Neue";
+  font-size: 1.4em;
+}

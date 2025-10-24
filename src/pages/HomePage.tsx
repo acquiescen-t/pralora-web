@@ -28,9 +28,6 @@ export default function HomePage() {
     console.log("Clicked on " + mediaTitle);
   };
 
-  const getMediaLink = (media: Movie | TvSeries) =>
-    "title" in media ? "/movies/id/" : "/tv-series/id/";
-
   return (
     <div className="ps-3">
       <div className="browse-movies pt-5">
@@ -40,7 +37,7 @@ export default function HomePage() {
         <div className="row">
           {movies.map((movie) => (
             <div key={movie.id} className="col-2 py-2">
-              <Link to={getMediaLink(movie).concat(String(movie.id))}>
+              <Link to={"/media/tmdbId/".concat(String(movie.tmdbId))}>
                 <MediaCard media={movie} onSelectMedia={handleSelectMedia} />
               </Link>
             </div>
