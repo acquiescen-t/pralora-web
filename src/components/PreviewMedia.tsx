@@ -10,6 +10,7 @@ import {
   UserIcon,
 } from "@phosphor-icons/react";
 import { motion, AnimatePresence } from "framer-motion";
+import MediaInfo from "./MediaInfo";
 
 interface Props {
   media: Movie | TvSeries;
@@ -40,45 +41,16 @@ const PreviewMedia = ({ media }: Props) => {
               />
             </AnimatePresence>
           </div>
-          <div className="card-body p-1 text-white">
+          <MediaInfo media={media} />
+          <div className="preview-genres pt-2">
             <div className="row">
-              <div className="col">
-                <div className="preview-title py-2">{getMediaTitle(media)}</div>
-                <div className="preview-genres">
-                  {media.genre.map((id) => (
-                    <Link key={id} to={"/genres/" + id}>
-                      <span className="badge badge-green me-2">
-                        {GENRES[id]}
-                      </span>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-              <div className="col d-flex justify-content-end align-items-end">
-                <div className="preview-stats">
-                  <CalendarBlankIcon size={24} className="me-2" />
-                  {releaseYear(media)}
-                  <PopcornIcon size={24} className="ms-4 me-2" />
-                  {Math.round(media.vote_average * 10) / 10}
-                  <UserIcon size={24} className="ms-4 me-2" />
-                  {media.vote_count} votes
-                </div>
-              </div>
-            </div>
-            <div className="preview-overview py-2">{media.overview}</div>
-            <div className="preview-genres pt-2">
-              <div className="row">
-                <div className="col d-flex">
-                  <Link to={"/movies/id/" + media.id}>
-                    <button
-                      type="button"
-                      className="btn btn-sm btn-danger pt-1"
-                    >
-                      <PlayCircleIcon size={20} className="me-2" />
-                      <span className="bebas">Watch</span>
-                    </button>
-                  </Link>
-                </div>
+              <div className="col d-flex">
+                <Link to={"/media/tmdbId/" + media.tmdbId}>
+                  <button type="button" className="btn btn-sm btn-danger pt-1">
+                    <PlayCircleIcon size={20} className="me-2" />
+                    <span className="bebas">Watch</span>
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
