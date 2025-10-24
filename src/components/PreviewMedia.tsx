@@ -9,6 +9,7 @@ import {
   PopcornIcon,
   UserIcon,
 } from "@phosphor-icons/react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface Props {
   media: Movie | TvSeries;
@@ -26,11 +27,18 @@ const PreviewMedia = ({ media }: Props) => {
     <div className="card">
       {media ? (
         <div className="pt-4">
-          <div className="backdrop d-flex justify-content-end">
-            <img
-              src={Config.tmdbLandscapeMedia + media.backdrop_path}
-              className="img-fluid rounded"
-            />
+          <div className="backdrop-container position-relative d-flex justify-content-end">
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={media.backdrop_path}
+                src={Config.tmdbLandscapeMedia + media.backdrop_path}
+                className="img-fluid rounded position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+              />
+            </AnimatePresence>
           </div>
           <div className="card-body p-1 text-white">
             <div className="row">

@@ -134,3 +134,9 @@
 .movies-scroll::-webkit-scrollbar {
   display: none;
 }
+.backdrop-container {
+  height: 60vh;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  position: relative;
+}
