@@ -18,10 +18,10 @@ const GenrePage = () => {
       .get(Endpoints.findMoviesByGenreId(genreId))
       .then((response) => setMovies(response.data))
       .catch((error) => console.error(error));
-  }, []);
+  }, [genreId]);
 
   useEffect(() => {
-    if (movies) setSelectedMedia(movies[0]);
+    if (movies && selectedMedia == null) setSelectedMedia(movies[0]);
   }, [movies]);
 
   const handleSelectMedia = (media: Movie | TvSeries) => {
