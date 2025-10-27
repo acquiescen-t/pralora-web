@@ -146,3 +146,11 @@
   font-family: "Bebas Neue";
   font-size: 1.4em;
 }
+
+/* GenrePage */
+.genre-header {
+  padding-top: 2%;
+  padding-left: 1%;
+  font-size: 1.4em;
+  color: white;
+}
