@@ -34,10 +34,7 @@ export default function TvSeriesPage() {
               <div className="row g-3">
                 {tvSeries.map((tv) => (
                   <div key={tv.id} className="col-12 col-md-3">
-                    <MediaCard
-                      media={tv}
-                      onSelectMedia={handleSelectMedia}
-                    ></MediaCard>
+                    <MediaCard media={tv} onSelectMedia={handleSelectMedia} />
                   </div>
                 ))}
               </div>

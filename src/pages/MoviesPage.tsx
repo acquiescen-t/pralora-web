@@ -33,10 +33,7 @@ export default function MoviesPage() {
             <div className="row g-3">
               {movies.map((movie) => (
                 <div key={movie.id} className="col-12 col-md-3">
-                  <MediaCard
-                    media={movie}
-                    onSelectMedia={handleSelectMedia}
-                  ></MediaCard>
+                  <MediaCard media={movie} onSelectMedia={handleSelectMedia} />
                 </div>
               ))}
             </div>
