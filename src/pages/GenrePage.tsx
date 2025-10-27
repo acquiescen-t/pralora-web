@@ -37,49 +37,47 @@ const GenrePage = () => {
   };
 
   return (
-    <div className="pt-3 ps-3">
-      <div className="row">
-        <div className="col-6 py-4">
-          {movies && movies.length > 0 && (
-            <>
-              <div className="page-header">
-                Filtered {movies.length} {GENRES[parseInt(genreId)]} Movies
+    <div className="row">
+      <div className="col-6 py-4">
+        {movies && movies.length > 0 && (
+          <>
+            <div className="page-header">
+              Filtered {movies.length} {GENRES[parseInt(genreId)]} Movies
+            </div>
+            <div className="container overflow-auto media-scroll">
+              <div className="row g-3">
+                {movies.map((movie) => (
+                  <div key={movie.id} className="col-12 col-md-3">
+                    <MediaCard
+                      media={movie}
+                      onSelectMedia={handleSelectMedia}
+                    ></MediaCard>
+                  </div>
+                ))}
               </div>
-              <div className="container overflow-auto media-scroll">
-                <div className="row g-3">
-                  {movies.map((movie) => (
-                    <div key={movie.id} className="col-12 col-md-3">
-                      <MediaCard
-                        media={movie}
-                        onSelectMedia={handleSelectMedia}
-                      ></MediaCard>
-                    </div>
-                  ))}
-                </div>
+            </div>
+          </>
+        )}
+        {tvSeries && tvSeries.length > 0 && (
+          <>
+            <div className="page-header">
+              Filtered {tvSeries.length} {GENRES[parseInt(genreId)]} Tv Series
+            </div>
+            <div className="container overflow-auto media-scroll">
+              <div className="row g-3">
+                {tvSeries.map((tv) => (
+                  <div key={tv.id} className="col-12 col-md-3">
+                    <MediaCard media={tv} onSelectMedia={handleSelectMedia} />
+                  </div>
+                ))}
               </div>
-            </>
-          )}
-          {tvSeries && tvSeries.length > 0 && (
-            <>
-              <div className="page-header">
-                Filtered {tvSeries.length} {GENRES[parseInt(genreId)]} Tv Series
-              </div>
-              <div className="container overflow-auto media-scroll">
-                <div className="row g-3">
-                  {tvSeries.map((tv) => (
-                    <div key={tv.id} className="col-12 col-md-3">
-                      <MediaCard media={tv} onSelectMedia={handleSelectMedia} />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </>
-          )}
-        </div>
+            </div>
+          </>
+        )}
+      </div>
 
-        <div className="col-6 py-5">
-          {selectedMedia && <PreviewMedia media={selectedMedia}></PreviewMedia>}
-        </div>
+      <div className="col-6 py-5">
+        {selectedMedia && <PreviewMedia media={selectedMedia}></PreviewMedia>}
       </div>
     </div>
   );

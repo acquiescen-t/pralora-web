@@ -9,7 +9,7 @@
     min-height: 100vh;
 }
 .outlet {
-  padding: 1% 1% 0% 1%;
+  padding: 1%;
 }
 .col {
   display: block;
@@ -99,11 +99,7 @@
   color: #456357;
 }
 
-/* MoviesPage */
-.backdrop img {
-  width: 100%;
-  object-fit: fill;
-}
+/* PreviewMedia */
 .preview-title, .preview-overview, .preview-release-year, .preview-genres {
   padding: 0%;
 }
@@ -129,6 +125,14 @@
 .badge-green:hover {
   background-color: #638e7c;
 }
+.backdrop-container {
+  height: 60vh;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+/* Partitioned scrolling when browsing Movies / Tv Series */
 .media-scroll {
   max-height: 90vh;
   display: flex;
@@ -138,17 +142,5 @@
 }
 .media-scroll::-webkit-scrollbar {
   display: none;
-}
-.backdrop-container {
-  height: 60vh;
-  overflow: hidden;
-  border-radius: 0.5rem;
-  position: relative;
-}
-
-/* WatchPage */
-.media-info-title {
-  font-family: "Bebas Neue";
-  font-size: 1.4em;
 }
 
