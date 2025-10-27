@@ -29,7 +29,7 @@ export default function TvSeriesPage() {
       <div className="pt-3 ps-3">
         <div className="page-header">All Tv Series</div>
         <div className="row">
-          <div className="col-6 pt-4">
+          <div className="col-6 py-4">
             <div className="container overflow-auto media-scroll">
               <div className="row g-3">
                 {tvSeries.map((tv) => (
