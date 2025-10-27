@@ -8,13 +8,13 @@ import PreviewMedia from "../components/PreviewMedia";
 import type { TvSeries } from "../models/TvSeries";
 
 const GenrePage = () => {
-  const { genreId } = useParams<{ genreId: string }>();
+  const { genreId } = useParams() as { genreId: string };
   const [movies, setMovies] = useState<Movie[]>();
   const [selectedMovie, setSelectedMovie] = useState<Movie>();
 
   useEffect(() => {
     api
-      .get(Endpoints.findMoviesByGenreId(genreId!))
+      .get(Endpoints.findMoviesByGenreId(genreId))
       .then((response) => setMovies(response.data))
       .catch((error) => console.error(error));
   }, []);

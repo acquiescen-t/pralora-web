@@ -21,7 +21,7 @@ import type { Movie } from "../models/Movie";
 import MediaInfo from "../components/MediaInfo";
 
 const WatchPage = () => {
-  const { tmdbId } = useParams<{ tmdbId: string }>();
+  const { tmdbId } = useParams() as { tmdbId: string };
   const [playableMedia, setPlayableMedia] = useState<Movie | Episode>();
   const [title, setTitle] = useState<string>("");
   const [playableMediaUrl, setPlayableMediaUrl] = useState<string>("");
@@ -29,7 +29,7 @@ const WatchPage = () => {
   /* Retrieve media information */
   useEffect(() => {
     api
-      .get(Endpoints.findMovieByTmdbId(tmdbId!))
+      .get(Endpoints.findMovieByTmdbId(tmdbId))
       .then((response) => setPlayableMedia(response.data))
       .catch((error) => console.error(error));
   }, []);
