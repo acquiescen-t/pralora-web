@@ -12,7 +12,7 @@ import GenresPage from "./pages/GenresPage.tsx";
 import NotFoundPage from "./pages/NotFoundPage.tsx";
 import WatchPage from "./pages/WatchPage.tsx";
 import GenrePage from "./pages/GenrePage.tsx";
-import MediaPage from "./pages/MediaPage.tsx";
+import MediaPage from "./pages/MoviesPage.tsx";
 
 const router = createBrowserRouter([
   {
