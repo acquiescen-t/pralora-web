@@ -5,16 +5,28 @@ import { Endpoints } from "../api/Endpoints";
 import { useParams } from "react-router-dom";
 import MediaCard from "../components/MediaCard";
 import PreviewMedia from "../components/PreviewMedia";
+import type { TvSeries } from "../models/TvSeries";
 
 const GenrePage = () => {
   const { genreId } = useParams<{ genreId: string }>();
   const [movies, setMovies] = useState<Movie[]>();
+  const [selectedMovie, setSelectedMovie] = useState<Movie>();
+
   useEffect(() => {
     api
       .get(Endpoints.findMoviesByGenreId(genreId!))
       .then((response) => setMovies(response.data))
       .catch((error) => console.error(error));
   }, []);
+
+  useEffect(() => {
+    if (movies) setSelectedMovie(movies[0]);
+  }, [movies]);
+
+  const handleSelectMedia = (media: Movie | TvSeries) => {
+    let mediaTitle = "title" in media ? media.title : media.name;
+    console.log("Clicked on " + mediaTitle);
+  };
 
   return (
     <div className="pt-3 ps-3">
