@@ -27,7 +27,7 @@ export default function MoviesPage() {
   return (
     <div className="pt-3 ps-3">
       <div className="row">
-        <div className="col-6 pt-4">
+        <div className="col-6 py-4">
           <div className="container overflow-auto movies-scroll">
             <div className="row g-3">
               {movies.map((movie) => (
