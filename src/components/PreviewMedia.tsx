@@ -1,14 +1,8 @@
 import type { TvSeries } from "../models/TvSeries";
 import type { Movie } from "../models/Movie";
 import Config from "../api/Config";
-import { GENRES } from "../constants/Genres";
 import { Link } from "react-router-dom";
-import {
-  CalendarBlankIcon,
-  PlayCircleIcon,
-  PopcornIcon,
-  UserIcon,
-} from "@phosphor-icons/react";
+import { PlayCircleIcon } from "@phosphor-icons/react";
 import { motion, AnimatePresence } from "framer-motion";
 import MediaInfo from "./MediaInfo";
 
@@ -17,13 +11,6 @@ interface Props {
 }
 
 const PreviewMedia = ({ media }: Props) => {
-  const getMediaTitle = (media: Movie | TvSeries) =>
-    "title" in media ? media.title : media.name;
-  const releaseYear = (media: Movie | TvSeries) =>
-    "title" in media
-      ? new Date(media.release_date).getFullYear()
-      : new Date(media.first_air_date).getFullYear();
-
   return (
     <div className="card">
       {media ? (
