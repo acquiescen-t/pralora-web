@@ -75,10 +75,7 @@ const GenrePage = () => {
           </>
         )}
       </div>
-
-      <div className="col-6 py-5">
-        {selectedMedia && <PreviewMedia media={selectedMedia}></PreviewMedia>}
-      </div>
+      {selectedMedia && <PreviewMedia media={selectedMedia}></PreviewMedia>}
     </div>
   );
 };
