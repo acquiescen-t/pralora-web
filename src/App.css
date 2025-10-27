@@ -14,6 +14,11 @@
 .col {
   display: block;
 }
+.page-header {
+  padding: 2%;
+  font-size: 1.4em;
+  color: white;
+}
 
 /* Sidebar size, colour & transition */
 .sidebar, .sidebar .list-group-item {
@@ -124,14 +129,14 @@
 .badge-green:hover {
   background-color: #638e7c;
 }
-.movies-scroll {
+.media-scroll {
   max-height: 90vh;
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
 }
-.movies-scroll::-webkit-scrollbar {
+.media-scroll::-webkit-scrollbar {
   display: none;
 }
 .backdrop-container {
@@ -147,10 +152,3 @@
   font-size: 1.4em;
 }
 
-/* GenrePage */
-.genre-header {
-  padding-top: 2%;
-  padding-left: 1%;
-  font-size: 1.4em;
-  color: white;
-}
