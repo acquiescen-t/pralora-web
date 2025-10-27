@@ -26,9 +26,9 @@ export default function MoviesPage() {
 
   return (
     <div className="pt-3 ps-3">
-      <div className="page-header">All Movies</div>
       <div className="row">
         <div className="col-6 py-4">
+          <div className="page-header">All Movies</div>
           <div className="container overflow-auto media-scroll">
             <div className="row g-3">
               {movies.map((movie) => (
@@ -42,7 +42,7 @@ export default function MoviesPage() {
             </div>
           </div>
         </div>
-        <div className="col-6">
+        <div className="col-6 py-5">
           {selectedMedia && <PreviewMedia media={selectedMedia}></PreviewMedia>}
         </div>
       </div>

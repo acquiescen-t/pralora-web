@@ -37,9 +37,9 @@ const GenrePage = () => {
   };
 
   return (
-    <div className="py-3 ps-3">
+    <div className="pt-3 ps-3">
       <div className="row">
-        <div className="col-6 pt-4">
+        <div className="col-6 py-4">
           {movies && movies.length > 0 && (
             <>
               <div className="page-header">
@@ -80,7 +80,7 @@ const GenrePage = () => {
           )}
         </div>
 
-        <div className="col-6 pt-5">
+        <div className="col-6 py-5">
           {selectedMedia && <PreviewMedia media={selectedMedia}></PreviewMedia>}
         </div>
       </div>
