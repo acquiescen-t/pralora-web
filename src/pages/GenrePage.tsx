@@ -11,7 +11,7 @@ import { GENRES } from "../constants/Genres";
 const GenrePage = () => {
   const { genreId } = useParams() as { genreId: string };
   const [movies, setMovies] = useState<Movie[]>();
-  const [selectedMovie, setSelectedMovie] = useState<Movie>();
+  const [selectedMedia, setSelectedMedia] = useState<Movie | TvSeries>();
 
   useEffect(() => {
     api
@@ -21,12 +21,11 @@ const GenrePage = () => {
   }, []);
 
   useEffect(() => {
-    if (movies) setSelectedMovie(movies[0]);
+    if (movies) setSelectedMedia(movies[0]);
   }, [movies]);
 
   const handleSelectMedia = (media: Movie | TvSeries) => {
-    let mediaTitle = "title" in media ? media.title : media.name;
-    console.log("Clicked on " + mediaTitle);
+    setSelectedMedia(media!);
   };
 
   return (
@@ -43,20 +42,21 @@ const GenrePage = () => {
             <div className="col-6 pt-4">
               <div className="container overflow-auto movies-scroll">
                 <div className="row g-3">
-                  {movies &&
-                    movies.map((movie) => (
-                      <div key={movie.id} className="col-12 col-md-3">
-                        <MediaCard
-                          media={movie}
-                          onSelectMedia={handleSelectMedia}
-                        ></MediaCard>
-                      </div>
-                    ))}
+                  {movies.map((movie) => (
+                    <div key={movie.id} className="col-12 col-md-3">
+                      <MediaCard
+                        media={movie}
+                        onSelectMedia={handleSelectMedia}
+                      ></MediaCard>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
             <div className="col-6">
-              <PreviewMedia media={selectedMovie!}></PreviewMedia>
+              {selectedMedia && (
+                <PreviewMedia media={selectedMedia}></PreviewMedia>
+              )}
             </div>
           </div>
         </>
