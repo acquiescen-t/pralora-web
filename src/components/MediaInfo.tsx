@@ -24,7 +24,7 @@ export default function MediaInfo({ media }: Props) {
 
   return (
     <div className="card-body p-1 text-white">
-      <div className="row">
+      <div className="media-info-title bebas-light py-2">{mediaTitle}</div>
         <div className="col">
           <div className="preview-title py-2">{mediaTitle}</div>
           <div className="preview-genres">

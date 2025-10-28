@@ -31,7 +31,7 @@ const Sidebar = () => {
   }
 
   return (
-    <>
+    <div className="bebas-light">
       <ListIcon
         className="sidebar-btn"
         size={24}
@@ -56,7 +56,7 @@ const Sidebar = () => {
                   key={page}
                   to={"/" + page.replaceAll(" ", "-")}
                   className={
-                    "list-group-item list-group-item-action" +
+                    "list-group-item list-group-item-action bebas-light" +
                     (selectedIndex === index ? " active" : "")
                   }
                   onClick={() => setSelectedIndex(index)}
@@ -70,7 +70,7 @@ const Sidebar = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

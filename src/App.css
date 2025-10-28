@@ -19,11 +19,13 @@
   font-size: 1.4em;
   color: white;
 }
-
-/* Sidebar size, colour & transition */
-.sidebar, .sidebar .list-group-item {
-  font-family:"Bebas Neue", sans-serif !important;
-  font-weight:500;
+.bebas-light {
+  font-family:"Bebas Neue";
+  font-weight:300;
+}
+.bebas-medium {
+  font-family: "Bebas Neue";
+  font-weight: 600;
 }
 .sidebar {
   width: 10vw !important;
@@ -104,8 +106,6 @@
   padding: 0%;
 }
 .preview-title {
-  font-family: "Bebas Neue";
-  font-weight: 500;
   font-size: 1.25em;
   color: white;
 }
@@ -115,7 +115,6 @@
 }
 .preview-genres span {
   font-size: 0.85em;
-  font-family: "Bebas Neue";
 }
 .badge-green {
   background-color: #456357;
