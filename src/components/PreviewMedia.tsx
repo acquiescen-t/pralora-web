@@ -33,7 +33,13 @@ const PreviewMedia = ({ media }: Props) => {
             <div className="pt-2">
               <div className="row">
                 <div className="col d-flex">
-                  <Link to={"/media/tmdbId/" + media.tmdbId}>
+                  <Link
+                    to={
+                      "season" in media
+                        ? "/tv-series/" + media.tmdbId
+                        : "/media/" + media.tmdbId
+                    }
+                  >
                     <button
                       type="button"
                       className="btn btn-sm btn-danger pt-1"
