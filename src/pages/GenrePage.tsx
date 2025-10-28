@@ -44,7 +44,7 @@ const GenrePage = () => {
             <div className="page-header">
               Filtered {movies.length} {GENRES[parseInt(genreId)]} Movies
             </div>
-            <div className="container overflow-auto media-scroll">
+            <div className="container overflow-auto horizontal-scroll">
               <div className="row g-3">
                 {movies.map((movie) => (
                   <div key={movie.id} className="col-12 col-md-3">
@@ -63,7 +63,7 @@ const GenrePage = () => {
             <div className="page-header">
               Filtered {tvSeries.length} {GENRES[parseInt(genreId)]} Tv Series
             </div>
-            <div className="container overflow-auto media-scroll">
+            <div className="container overflow-auto horizontal-scroll">
               <div className="row g-3">
                 {tvSeries.map((tv) => (
                   <div key={tv.id} className="col-12 col-md-3">

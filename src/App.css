@@ -134,14 +134,14 @@
 }
 
 /* Partitioned scrolling when browsing Movies / Tv Series */
-.media-scroll {
+.horizontal-scroll {
   max-height: 90vh;
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
 }
-.media-scroll::-webkit-scrollbar {
+.horizontal-scroll::-webkit-scrollbar {
   display: none;
 }
 
