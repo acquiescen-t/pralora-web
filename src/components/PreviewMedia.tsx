@@ -30,7 +30,7 @@ const PreviewMedia = ({ media }: Props) => {
               </AnimatePresence>
             </div>
             <MediaInfo media={media} />
-            <div className="preview-genres pt-2">
+            <div className="pt-2">
               <div className="row">
                 <div className="col d-flex">
                   <Link to={"/media/tmdbId/" + media.tmdbId}>
