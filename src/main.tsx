@@ -13,6 +13,8 @@ import NotFoundPage from "./pages/NotFoundPage.tsx";
 import WatchPage from "./pages/WatchPage.tsx";
 import GenrePage from "./pages/GenrePage.tsx";
 import MoviesPage from "./pages/MoviesPage.tsx";
+import ActorPage from "./pages/ActorPage.tsx";
+import TvSeriesSelectorPage from "./pages/TvSeriesSelectorPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -23,9 +25,11 @@ const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       { path: "home", element: <HomePage /> },
       { path: "movies", element: <MoviesPage /> },
-      { path: "media/tmdbId/:tmdbId", element: <WatchPage /> },
+      { path: "media/:tmdbId", element: <WatchPage /> },
       { path: "tv-series", element: <TvSeriesPage /> },
+      { path: "tv-series/:tmdbId", element: <TvSeriesSelectorPage /> },
       { path: "actors", element: <ActorsPage /> },
+      { path: "actors/:tmdbId", element: <ActorPage /> },
       { path: "genres", element: <GenresPage /> },
       { path: "genres/:genreId", element: <GenrePage /> },
     ],
