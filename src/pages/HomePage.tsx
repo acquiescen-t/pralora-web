@@ -37,7 +37,7 @@ export default function HomePage() {
         <div className="row">
           {movies.map((movie) => (
             <div key={movie.id} className="col-2 py-2">
-              <Link to={"/media/tmdbId/".concat(String(movie.tmdbId))}>
+              <Link to={"/media/".concat(String(movie.tmdbId))}>
                 <MediaCard media={movie} onSelectMedia={handleSelectMedia} />
               </Link>
             </div>
