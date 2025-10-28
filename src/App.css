@@ -145,3 +145,19 @@
   display: none;
 }
 
+/* CastInfo */
+.cast-info .card {
+  background: #456357;
+}
+.cast-info a {
+  text-decoration: none;
+}
+.cast-info .card-body {
+  padding: 3%;
+}
+.cast-info .cast-col {
+  flex: 0 0 16.6%;
+  max-width: 16.6%;
+}
+
+/* ActorPage */
