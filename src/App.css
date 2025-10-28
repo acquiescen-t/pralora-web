@@ -27,6 +27,8 @@
   font-family: "Bebas Neue";
   font-weight: 600;
 }
+
+/* Sidebar */
 .sidebar {
   width: 10vw !important;
   background-color: #638e7c;
