@@ -19,12 +19,13 @@ import ReactPlayer from "react-player";
 import type { Episode } from "../models/Episode";
 import type { Movie } from "../models/Movie";
 import MediaInfo from "../components/MediaInfo";
+import CastInfo from "../components/CastInfo";
 
 const WatchPage = () => {
   const { tmdbId } = useParams() as { tmdbId: string };
   const [playableMedia, setPlayableMedia] = useState<Movie | Episode>();
   const [title, setTitle] = useState<string>("");
-  const [playableMediaUrl, setPlayableMediaUrl] = useState<string>("");
+  const [playableMediaUrl, setPlayableMediaUrl] = useState<string | null>(null);
 
   /* Retrieve media information */
   useEffect(() => {
@@ -49,34 +50,40 @@ const WatchPage = () => {
   }, [playableMedia]);
 
   return (
-    <div className="watch-page">
-      <MediaController
-        style={{
-          width: "100%",
-        }}
-      >
-        <ReactPlayer
-          className="react-player"
-          slot="media"
-          src={playableMediaUrl}
-          controls={false}
-          width="100%"
-          height="100%"
-          autoPlay={true}
-        ></ReactPlayer>
-        <MediaControlBar>
-          <MediaPlayButton />
-          <MediaSeekBackwardButton seekOffset={10} />
-          <MediaSeekForwardButton seekOffset={10} />
-          <MediaTimeRange />
-          <MediaTimeDisplay showDuration />
-          <MediaMuteButton />
-          <MediaVolumeRange />
-          <MediaPlaybackRateButton />
-          <MediaFullscreenButton />
-        </MediaControlBar>
-      </MediaController>
-      {playableMedia && <MediaInfo media={playableMedia}></MediaInfo>}
+    <div className="watch-page py-5">
+      {playableMediaUrl && (
+        <>
+          <MediaController
+            style={{
+              width: "100%",
+            }}
+          >
+            <ReactPlayer
+              className="react-player"
+              slot="media"
+              src={playableMediaUrl}
+              controls={false}
+              width="100%"
+              height="100%"
+              autoPlay={true}
+            ></ReactPlayer>
+            <MediaControlBar>
+              <MediaPlayButton />
+              <MediaSeekBackwardButton seekOffset={10} />
+              <MediaSeekForwardButton seekOffset={10} />
+              <MediaTimeRange />
+              <MediaTimeDisplay showDuration />
+              <MediaMuteButton />
+              <MediaVolumeRange />
+              <MediaPlaybackRateButton />
+              <MediaFullscreenButton />
+            </MediaControlBar>
+          </MediaController>
+          {playableMedia && <MediaInfo media={playableMedia}></MediaInfo>}
+          {playableMedia && <CastInfo media={playableMedia}></CastInfo>}
+        </>
+      )}
+      {!playableMediaUrl && <span className="text-white">Error</span>}
     </div>
   );
 };
