@@ -26,7 +26,7 @@ export default function MediaInfo({ media }: Props) {
     <div className="card-body p-1 text-white">
       <div className="media-info-title bebas-light py-2">{mediaTitle}</div>
         <div className="col">
-          <div className="preview-title py-2">{mediaTitle}</div>
+        <div className="media-info-genres">
           <div className="preview-genres">
             {media.genre.map((id) => (
               <Link key={id} to={"/genres/" + id}>
@@ -44,7 +44,7 @@ export default function MediaInfo({ media }: Props) {
             <UserIcon size={24} className="ms-4 me-2" />
             {media.vote_count} votes
           </div>
-        </div>
+      <div className="media-info-overview py-2">{media.overview}</div>
       </div>
       <div className="preview-overview py-2">{media.overview}</div>
     </div>
