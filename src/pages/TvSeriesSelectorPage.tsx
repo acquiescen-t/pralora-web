@@ -21,7 +21,7 @@ const TvSeriesSelectorPage = () => {
 
   return (
     <div className="row">
-      <div className="col-6 tv-series-selector py-5 text-white">
+      <div className="col-6 tv-series-selector pt-4 text-white scrollable-section">
         {tvSeries && (
           <div className="season p-3">
             {tvSeries.season.map((s) => (

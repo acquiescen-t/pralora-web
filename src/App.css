@@ -27,6 +27,19 @@
   font-family: "Bebas Neue";
   font-weight: 600;
 }
+.scrollable-section {
+  height: 100vh;
+  overflow-y: auto;
+  padding-right: 1rem;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.sticky-preview {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
 
 /* Sidebar */
 .sidebar {
