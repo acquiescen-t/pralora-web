@@ -56,7 +56,7 @@ const Navbar = ({ initialQuery = "" }: Props) => {
           className="d-flex justify-content-end align-items-center text-white pe-3 align-bottom"
           style={{ flex: 1 }}
         >
-          Account and notifications go here
+          {/* Account and notifications go here */}
         </div>
       </div>
     </nav>
