@@ -33,6 +33,12 @@ const WatchPage = () => {
       .get(Endpoints.findMovieByTmdbId(tmdbId))
       .then((response) => setPlayableMedia(response.data))
       .catch((error) => console.error(error));
+
+    if (!playableMedia)
+      api
+        .get(Endpoints.findByEpisodeTmdbId(tmdbId))
+        .then((response) => setPlayableMedia(response.data))
+        .catch((error) => console.error(error));
   }, []);
   /* Update browser tab title, modify filePath to point to web server */
   useEffect(() => {
