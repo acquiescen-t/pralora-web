@@ -26,16 +26,14 @@ export default function MoviesPage() {
 
   return (
     <div className="row">
-      <div className="col-6 py-4">
+      <div className="col-6 py-4 px-4 scrollable-section">
         <div className="page-header">All Movies</div>
-        <div className="container overflow-auto horizontal-scroll">
-          <div className="row g-3">
-            {movies.map((movie) => (
-              <div key={movie.id} className="col-12 col-md-3">
-                <MediaCard media={movie} onSelectMedia={handleSelectMedia} />
-              </div>
-            ))}
-          </div>
+        <div className="row g-3">
+          {movies.map((movie) => (
+            <div key={movie.id} className="col-12 col-md-3">
+              <MediaCard media={movie} onSelectMedia={handleSelectMedia} />
+            </div>
+          ))}
         </div>
       </div>
       {selectedMedia && <PreviewMedia media={selectedMedia}></PreviewMedia>}

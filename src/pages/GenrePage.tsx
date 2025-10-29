@@ -38,41 +38,37 @@ const GenrePage = () => {
 
   return (
     <div className="row">
-      <div className="col-6 py-4">
+      <div className="col-6 py-4 scrollable-section">
         {movies && movies.length > 0 && (
           <>
             <div className="page-header">
               Filtered {movies.length} {GENRES[parseInt(genreId)]} Movies
             </div>
-            <div className="container overflow-auto horizontal-scroll">
-              <div className="row g-3">
-                {movies.map((movie) => (
-                  <div key={movie.id} className="col-12 col-md-3">
-                    <MediaCard
-                      media={movie}
-                      onSelectMedia={handleSelectMedia}
-                    ></MediaCard>
-                  </div>
-                ))}
-              </div>
+            <div className="row g-3">
+              {movies.map((movie) => (
+                <div key={movie.id} className="col-12 col-md-3">
+                  <MediaCard
+                    media={movie}
+                    onSelectMedia={handleSelectMedia}
+                  ></MediaCard>
+                </div>
+              ))}
             </div>
           </>
         )}
         {tvSeries && tvSeries.length > 0 && (
-          <>
+          <div className="scrollable-section">
             <div className="page-header">
               Filtered {tvSeries.length} {GENRES[parseInt(genreId)]} Tv Series
             </div>
-            <div className="container overflow-auto horizontal-scroll">
-              <div className="row g-3">
-                {tvSeries.map((tv) => (
-                  <div key={tv.id} className="col-12 col-md-3">
-                    <MediaCard media={tv} onSelectMedia={handleSelectMedia} />
-                  </div>
-                ))}
-              </div>
+            <div className="row g-3">
+              {tvSeries.map((tv) => (
+                <div key={tv.id} className="col-12 col-md-3">
+                  <MediaCard media={tv} onSelectMedia={handleSelectMedia} />
+                </div>
+              ))}
             </div>
-          </>
+          </div>
         )}
       </div>
       {selectedMedia && <PreviewMedia media={selectedMedia}></PreviewMedia>}

@@ -47,21 +47,19 @@ const ActorPage = () => {
           </div>
 
           <div className="row movies-starred-in">
-            <div className="py-1">
+            <div className="py-1 scrollable-section">
               <div className="page-header">
                 Movies starring {personMedia.personName}
               </div>
-              <div className="container overflow-auto horizontal-scroll">
-                <div className="row g-3">
-                  {personMedia.movies.map((movie) => (
-                    <div key={movie.id} className="col-12 col-md-3">
-                      <MediaCard
-                        media={movie}
-                        onSelectMedia={handleSelectMedia}
-                      />
-                    </div>
-                  ))}
-                </div>
+              <div className="row g-3">
+                {personMedia.movies.map((movie) => (
+                  <div key={movie.id} className="col-12 col-md-3">
+                    <MediaCard
+                      media={movie}
+                      onSelectMedia={handleSelectMedia}
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
