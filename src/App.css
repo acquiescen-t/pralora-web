@@ -86,11 +86,9 @@
 .card {
   background-color: transparent;
   border: none;
-}
-.card-img-top {
   transition: transform 0.15s ease-in-out;
 }
-.card:hover .card-img-top {
+.card:hover {
   transform: scale(1.05);
 }
 .card-header {
