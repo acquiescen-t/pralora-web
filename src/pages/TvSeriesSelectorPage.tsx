@@ -4,10 +4,13 @@ import { useEffect, useState } from "react";
 import api from "../api/InternalApi";
 import { Endpoints } from "../api/Endpoints";
 import SeasonEpisodes from "../components/SeasonEpisodes";
+import type { Episode } from "../models/Episode";
+import PreviewMedia from "../components/PreviewMedia";
 
 const TvSeriesSelectorPage = () => {
   const { tmdbId } = useParams() as { tmdbId: string };
   const [tvSeries, setTvSeries] = useState<TvSeries>();
+  const [selectedMedia, setSelectedMedia] = useState<TvSeries | Episode>();
 
   useEffect(() => {
     api
@@ -17,14 +20,21 @@ const TvSeriesSelectorPage = () => {
   }, []);
 
   return (
-    <div className="tv-series-selector py-5 text-white">
-      {tvSeries && (
-        <div className="season p-3">
-          {tvSeries.season.map((s) => (
-            <SeasonEpisodes season={s} />
-          ))}
-        </div>
-      )}
+    <div className="row">
+      <div className="col-6 tv-series-selector py-5 text-white">
+        {tvSeries && (
+          <div className="season p-3">
+            {tvSeries.season.map((s) => (
+              <SeasonEpisodes
+                key={s.id}
+                season={s}
+                onSelectEpisode={setSelectedMedia}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+      {selectedMedia && <PreviewMedia media={selectedMedia} />}
     </div>
   );
 };
