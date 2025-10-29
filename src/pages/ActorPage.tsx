@@ -20,6 +20,13 @@ const ActorPage = () => {
       .catch((error) => console.error(error));
   }, []);
 
+  useEffect(() => {
+    personMedia &&
+      setSelectedMedia(
+        personMedia.movies[0] ? personMedia.movies[0] : personMedia.tvSeries[0]
+      );
+  }, [personMedia]);
+
   const [selectedMedia, setSelectedMedia] = useState<Movie | TvSeries>();
 
   const handleSelectMedia = (media: Movie | TvSeries) => {
