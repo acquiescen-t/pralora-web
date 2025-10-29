@@ -84,6 +84,7 @@
 
 /* Cards */
 .card {
+  overflow: hidden;
   background-color: transparent;
   border: none;
   transition: transform 0.15s ease-in-out;
