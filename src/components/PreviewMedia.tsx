@@ -5,9 +5,10 @@ import { Link } from "react-router-dom";
 import { PlayCircleIcon } from "@phosphor-icons/react";
 import { motion, AnimatePresence } from "framer-motion";
 import MediaInfo from "./MediaInfo";
+import type { Episode } from "../models/Episode";
 
 interface Props {
-  media: Movie | TvSeries;
+  media: Movie | TvSeries | Episode;
 }
 
 const PreviewMedia = ({ media }: Props) => {
