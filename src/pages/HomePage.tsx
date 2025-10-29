@@ -8,19 +8,17 @@ import MediaCard from "../components/MediaCard";
 
 export default function HomePage() {
   const [movies, setMovies] = useState<Movie[]>([]);
+  const [tvSeries, setTvSeries] = useState<TvSeries[]>([]);
   useEffect(() => {
     api
       .get(Endpoints.getRandomMovies("6"))
       .then((response) => setMovies(response.data))
       .catch((error) => console.error(error));
-  }, []);
-
-  const [tvSeries, setTvSeries] = useState<TvSeries[]>([]);
-  useEffect(() => {
     api
       .get(Endpoints.getRandomTvSeries("6"))
       .then((response) => setTvSeries(response.data))
       .catch((error) => console.error(error));
+    document.title = "pralora";
   }, []);
 
   const handleSelectMedia = (media: Movie | TvSeries) => {
