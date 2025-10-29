@@ -162,4 +162,11 @@
   max-width: 16.6%;
 }
 
-/* ActorPage */
+/* TvSeriesSelector */
+.episode-card .card {
+  background: #456357;
+}
+.episode-number {
+  font-size: 0.75em;
+  color: whitesmoke;
+}
