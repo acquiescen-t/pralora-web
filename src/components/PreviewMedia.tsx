@@ -12,7 +12,7 @@ interface Props {
 
 const PreviewMedia = ({ media }: Props) => {
   return (
-    <div className="col-6 py-5">
+    <div className="preview-media col-6 py-5">
       <div className="card">
         {media ? (
           <div>
