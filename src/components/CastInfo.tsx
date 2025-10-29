@@ -27,7 +27,10 @@ const CastInfo = ({ media }: Props) => {
       <div className="page-header ps-3 pb-0">Starring</div>
       <div className="row p-3 g-4">
         {castDetails.map((castDetail) => (
-          <div className="cast-col">
+          <div
+            key={castDetail.mediaTmdbId + castDetail.personTmdbId}
+            className="cast-col"
+          >
             <div className="card text-center">
               <Link
                 to={"/actors/" + castDetail.personTmdbId}
