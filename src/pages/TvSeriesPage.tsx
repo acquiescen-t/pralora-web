@@ -29,7 +29,7 @@ export default function TvSeriesPage() {
     <>
       <div className="page-header">All Tv Series</div>
       <div className="row">
-        <div className="col-6 py-4 scrollable-section">
+        <div className="col-6 p-4 scrollable-section">
           <div className="row g-3">
             {tvSeries.map((tv) => (
               <div key={tv.id} className="col-12 col-md-3">

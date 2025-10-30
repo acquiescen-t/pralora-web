@@ -29,7 +29,7 @@ export default function MoviesPage() {
     <>
       <div className="page-header">All Movies</div>
       <div className="row">
-        <div className="col-6 py-4 px-4 scrollable-section">
+        <div className="col-6 p-4 scrollable-section">
           <div className="row g-3">
             {movies.map((movie) => (
               <div key={movie.id} className="col-12 col-md-3">
