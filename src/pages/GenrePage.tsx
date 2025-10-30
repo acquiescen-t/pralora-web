@@ -20,7 +20,7 @@ const GenrePage = () => {
       .then((response) => setMovies(response.data))
       .catch((error) => console.error(error));
     api
-      .get(Endpoints.findTvSeriesByGenreId(genreId))
+      .get(Endpoints.findAllTvSeriesByGenreId(genreId))
       .then((response) => setTvSeries(response.data))
       .catch((error) => console.error(error));
   }, [genreId]);

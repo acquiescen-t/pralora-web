@@ -30,7 +30,7 @@ const WatchPage = () => {
   /* Retrieve media information */
   useEffect(() => {
     api
-      .get(Endpoints.findMediaByTmdbId(tmdbId))
+      .get(Endpoints.getMediaByTmdbId(tmdbId))
       .then((response) => setPlayableMedia(response.data))
       .catch((error) => console.error(error));
   }, []);
