@@ -25,7 +25,10 @@ const CastInfo = ({ media }: Props) => {
       <div className="page-header ps-3 pb-0">Starring</div>
       <div className="row p-3 g-4">
         {castDetails.map((castDetail) => (
-          <PersonCard personDetails={castDetail} />
+          <PersonCard
+            key={castDetail.personTmdbId + castDetail.personTmdbId}
+            personDetails={castDetail}
+          />
         ))}
       </div>
     </div>

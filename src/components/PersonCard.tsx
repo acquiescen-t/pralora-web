@@ -9,10 +9,6 @@ interface Props {
 }
 
 const PersonCard = ({ personDetails }: Props) => {
-  const keyId =
-    "mediaTmdbId" in personDetails
-      ? personDetails.mediaTmdbId + personDetails.personTmdbId
-      : personDetails.tmdbId;
   const tmdbId =
     "mediaTmdbId" in personDetails
       ? personDetails.mediaTmdbId
@@ -25,8 +21,9 @@ const PersonCard = ({ personDetails }: Props) => {
     "mediaTmdbId" in personDetails
       ? personDetails.personName
       : personDetails.name;
+
   return (
-    <div key={keyId} className="cast-col">
+    <div className="cast-col">
       <div className="card text-center">
         <Link to={"/actors/" + tmdbId} className="text-white">
           <img
