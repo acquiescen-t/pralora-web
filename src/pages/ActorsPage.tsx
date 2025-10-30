@@ -11,6 +11,7 @@ export default function ActorsPage() {
       .get(Endpoints.getAllPersons())
       .then((response) => setActors(response.data))
       .catch((error) => console.error(error));
+    document.title = "pralora - Actors";
   }, []);
 
   return (

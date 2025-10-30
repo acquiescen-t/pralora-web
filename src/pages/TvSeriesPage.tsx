@@ -16,6 +16,7 @@ export default function TvSeriesPage() {
   }, []);
   useEffect(() => {
     setSelectedMedia(tvSeries[0]);
+    document.title = "pralora - Tv Series";
   }, [tvSeries]);
 
   const [selectedMedia, setSelectedMedia] = useState<Movie | TvSeries>();
