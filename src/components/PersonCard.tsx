@@ -11,12 +11,8 @@ interface Props {
 const PersonCard = ({ personDetails }: Props) => {
   const tmdbId =
     "mediaTmdbId" in personDetails
-      ? personDetails.mediaTmdbId
+      ? personDetails.personTmdbId
       : personDetails.tmdbId;
-  const profilePath =
-    "mediaTmdbId" in personDetails
-      ? personDetails.profilePath
-      : personDetails.profile_path;
   const personName =
     "mediaTmdbId" in personDetails
       ? personDetails.personName
@@ -27,7 +23,7 @@ const PersonCard = ({ personDetails }: Props) => {
       <div className="card text-center">
         <Link to={"/actors/" + tmdbId} className="text-white">
           <img
-            src={Config.tmdbPortraitMedia + profilePath}
+            src={Config.tmdbPortraitMedia + personDetails.profilePath}
             className="card-img-top"
             onError={({ currentTarget }) => {
               currentTarget.onerror = null;
