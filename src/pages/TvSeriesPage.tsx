@@ -25,18 +25,20 @@ export default function TvSeriesPage() {
   };
 
   return (
-    <div className="row">
-      <div className="col-6 py-4 scrollable-section">
-        <div className="page-header">All Tv Series</div>
-        <div className="row g-3">
-          {tvSeries.map((tv) => (
-            <div key={tv.id} className="col-12 col-md-3">
-              <MediaCard media={tv} onSelectMedia={handleSelectMedia} />
-            </div>
-          ))}
+    <>
+      <div className="page-header">All Tv Series</div>
+      <div className="row">
+        <div className="col-6 py-4 scrollable-section">
+          <div className="row g-3">
+            {tvSeries.map((tv) => (
+              <div key={tv.id} className="col-12 col-md-3">
+                <MediaCard media={tv} onSelectMedia={handleSelectMedia} />
+              </div>
+            ))}
+          </div>
         </div>
+        {selectedMedia && <PreviewMedia media={selectedMedia}></PreviewMedia>}
       </div>
-      {selectedMedia && <PreviewMedia media={selectedMedia}></PreviewMedia>}
-    </div>
+    </>
   );
 }
