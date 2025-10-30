@@ -21,10 +21,12 @@ const ActorPage = () => {
   }, []);
 
   useEffect(() => {
-    personMedia &&
+    if (personMedia) {
+      document.title = personMedia.personName;
       setSelectedMedia(
         personMedia.movies[0] ? personMedia.movies[0] : personMedia.tvSeries[0]
       );
+    }
   }, [personMedia]);
 
   const [selectedMedia, setSelectedMedia] = useState<Movie | TvSeries>();
@@ -51,7 +53,7 @@ const ActorPage = () => {
               <div className="page-header">
                 Movies starring {personMedia.personName}
               </div>
-              <div className="row g-3">
+              <div className="ps-3 row g-3">
                 {personMedia.movies.map((movie) => (
                   <div key={movie.id} className="col-12 col-md-3">
                     <MediaCard
